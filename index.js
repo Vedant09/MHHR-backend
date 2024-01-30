@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 //   res.send("healthy");
 // });
 
-app.use('/api', routesHandler);
+app.use("/api", routesHandler);
 
 app.use((error, req, res, next) => {
   if (error.name === "JSONWebTokenError") {
@@ -22,8 +22,8 @@ app.use((error, req, res, next) => {
   } else {
     // TODO
     res.status(404).json({
-        error: "API Not found",
-      });
+      error: "API Not found",
+    });
   }
 });
 
