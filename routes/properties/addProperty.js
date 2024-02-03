@@ -1,6 +1,6 @@
 const models = require("../../models");
 
-async function getAllProperties(req, res, next) {
+async function addProperty(req, res, next) {
   try {
     const payload = req.body;
     console.log(payload, "payload");
@@ -18,4 +18,4 @@ async function getAllProperties(req, res, next) {
   }
 }
 
-module.exports = exports = getAllProperties;
+module.exports = exports = addProperty;
