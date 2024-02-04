@@ -1,4 +1,5 @@
 const express = require("express");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -7,6 +8,14 @@ const routesHandler = require("./routes");
 const PORT = 8000;
 
 app.use(bodyParser.json());
+
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+};
+
+// Use cors middleware with the specified options
+app.use(cors(corsOptions));
 
 // app.use("/api/health", (req, res) => {
 //   res.send("healthy");
