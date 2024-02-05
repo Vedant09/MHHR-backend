@@ -18,12 +18,14 @@ module.exports = (sequelize, DataTypes) => {
     name: DataTypes.STRING,
     address: DataTypes.STRING,
     description: DataTypes.STRING,
-    bathrooms: DataTypes.INTEGER,
-    bedrooms: DataTypes.INTEGER,
-    rent: DataTypes.INTEGER,
+    bathrooms: DataTypes.DECIMAL,
+    bedrooms: DataTypes.DECIMAL,
+    rent: DataTypes.DECIMAL,
     utilities: DataTypes.ARRAY(DataTypes.TEXT),
     amenities: DataTypes.ARRAY(DataTypes.TEXT),
-    images: DataTypes.ARRAY(DataTypes.TEXT)
+    images: DataTypes.ARRAY(DataTypes.TEXT),
+    houseType: DataTypes.ENUM('apartment', 'single_family', 'condo', 'town_house'),
+    availability: DataTypes.ENUM('available', 'unavailable', 'coming_soon')
   }, {
     sequelize,
     modelName: 'Property',
